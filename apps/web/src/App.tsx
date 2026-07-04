@@ -2,12 +2,15 @@ function App() {
   return (
     <>
       {/* Navigation */}
-      <div className="nav">
-        <a className="nav-brand" href="#">AgentPhased</a>
-        <div className="nav-links">
-          <a href="#">Docs</a>
-          <a href="https://github.com/samvardhan03/agent_phased">GitHub</a>
-          <span className="badge">v0.1.0</span>
+      <div className="nav-wrapper">
+        <div className="nav">
+          <a className="nav-brand" href="#">AgentPhased</a>
+          <div className="nav-links">
+            <a href="#architecture">Architecture</a>
+            <a href="#stack">The Stack</a>
+            <a href="https://github.com/samvardhan03/agent_phased">GitHub</a>
+            <span className="badge">v0.1.0</span>
+          </div>
         </div>
       </div>
 
@@ -62,50 +65,58 @@ function App() {
         <div className="arch-diagram">
           <svg
             width="100%"
-            viewBox="0 0 800 400"
+            viewBox="0 0 800 420"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ maxWidth: 800 }}
+            style={{ maxWidth: 760 }}
           >
             {/* AgentID Box */}
-            <rect x="50" y="30" width="200" height="60" fill="white" stroke="#d4d4d4" strokeWidth="1" />
-            <rect x="50" y="30" width="3" height="60" fill="#06b6d4" />
-            <text x="150" y="53" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="13" fill="#0a0a0a" fontWeight="600">AgentID</text>
-            <text x="150" y="73" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#737373">Cryptographic Identity</text>
+            <rect x="50" y="30" width="200" height="70" rx="6" fill="white" stroke="#e5e7eb" strokeWidth="1" />
+            <rect x="50" y="30" width="200" height="3" rx="1.5" fill="#06b6d4" />
+            <text x="150" y="58" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="14" fill="#0a0a0a" fontWeight="700">AgentID</text>
+            <text x="150" y="80" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#6b7280">Cryptographic Identity</text>
 
             {/* AgentMem Box */}
-            <rect x="300" y="30" width="200" height="60" fill="white" stroke="#d4d4d4" strokeWidth="1" />
-            <rect x="300" y="30" width="3" height="60" fill="#8b5cf6" />
-            <text x="400" y="53" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="13" fill="#0a0a0a" fontWeight="600">AgentMem</text>
-            <text x="400" y="73" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#737373">Persistent Memory</text>
+            <rect x="300" y="30" width="200" height="70" rx="6" fill="white" stroke="#e5e7eb" strokeWidth="1" />
+            <rect x="300" y="30" width="200" height="3" rx="1.5" fill="#8b5cf6" />
+            <text x="400" y="58" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="14" fill="#0a0a0a" fontWeight="700">AgentMem</text>
+            <text x="400" y="80" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#6b7280">Persistent Memory</text>
 
             {/* Agentool Box */}
-            <rect x="550" y="30" width="200" height="60" fill="white" stroke="#d4d4d4" strokeWidth="1" />
-            <rect x="550" y="30" width="3" height="60" fill="#f59e0b" />
-            <text x="650" y="53" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="13" fill="#0a0a0a" fontWeight="600">Agentool</text>
-            <text x="650" y="73" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#737373">Tool Execution</text>
+            <rect x="550" y="30" width="200" height="70" rx="6" fill="white" stroke="#e5e7eb" strokeWidth="1" />
+            <rect x="550" y="30" width="200" height="3" rx="1.5" fill="#f59e0b" />
+            <text x="650" y="58" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="14" fill="#0a0a0a" fontWeight="700">Agentool</text>
+            <text x="650" y="80" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#6b7280">Tool Execution</text>
 
             {/* Lines from boxes to runtime */}
-            <line x1="150" y1="90" x2="150" y2="170" stroke="#d4d4d4" strokeWidth="1" />
-            <line x1="400" y1="90" x2="400" y2="170" stroke="#d4d4d4" strokeWidth="1" />
-            <line x1="650" y1="90" x2="650" y2="170" stroke="#d4d4d4" strokeWidth="1" />
+            <line x1="150" y1="100" x2="150" y2="140" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="150" y1="140" x2="300" y2="180" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="400" y1="100" x2="400" y2="180" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="650" y1="100" x2="650" y2="140" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="650" y1="140" x2="500" y2="180" stroke="#d1d5db" strokeWidth="1" />
+
+            {/* Small circles at connection points */}
+            <circle cx="300" cy="180" r="3" fill="#d1d5db" />
+            <circle cx="400" cy="180" r="3" fill="#d1d5db" />
+            <circle cx="500" cy="180" r="3" fill="#d1d5db" />
 
             {/* Runtime Box */}
-            <rect x="200" y="170" width="400" height="60" fill="white" stroke="#0a0a0a" strokeWidth="2" />
-            <text x="400" y="200" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="13" fill="#0a0a0a" fontWeight="700">AgentPhased Runtime</text>
+            <rect x="200" y="180" width="400" height="64" rx="6" fill="white" stroke="#0a0a0a" strokeWidth="2" />
+            <text x="400" y="212" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="14" fill="#0a0a0a" fontWeight="700">AgentPhased Runtime</text>
 
             {/* Line to EventBus */}
-            <line x1="400" y1="230" x2="400" y2="270" stroke="#d4d4d4" strokeWidth="1" strokeDasharray="4 4" />
+            <line x1="400" y1="244" x2="400" y2="284" stroke="#d1d5db" strokeWidth="1" strokeDasharray="5 4" />
 
             {/* EventBus Box */}
-            <rect x="250" y="270" width="300" height="50" fill="white" stroke="#d4d4d4" strokeWidth="1" strokeDasharray="4 4" />
-            <text x="400" y="295" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="13" fill="#0a0a0a">EventBus</text>
+            <rect x="250" y="284" width="300" height="50" rx="6" fill="#f8f9fa" stroke="#d1d5db" strokeWidth="1" strokeDasharray="5 4" />
+            <text x="400" y="309" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="13" fill="#4b5563" fontWeight="500">EventBus</text>
 
-            {/* Line from EventBus down */}
-            <line x1="400" y1="320" x2="400" y2="350" stroke="#d4d4d4" strokeWidth="1" />
+            {/* Arrow down from EventBus */}
+            <line x1="400" y1="334" x2="400" y2="368" stroke="#d1d5db" strokeWidth="1" />
+            <polygon points="394,362 400,372 406,362" fill="#d1d5db" />
 
             {/* Bottom labels */}
-            <text x="400" y="370" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="12" fill="#0a0a0a">SSE / WebSocket</text>
-            <text x="400" y="395" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#737373">Dashboard / Client</text>
+            <text x="400" y="390" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="12" fill="#4b5563" fontWeight="500">SSE / WebSocket</text>
+            <text x="400" y="410" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="11" fill="#9ca3af">Dashboard / Client</text>
           </svg>
         </div>
       </div>
@@ -119,19 +130,23 @@ function App() {
         <div className="code-section">
           <span className="kw">from</span>{' agentphased '}<span className="kw">import</span>{' Agent'}{'\n'}
           {'\n'}
-          {'agent = Agent(name='}<span className="str">"sentinel"</span>{', project='}<span className="str">"acme-corp"</span>{')'}{'\n'}
+          {'agent = Agent(name='}<span className="str">"sentinel"</span>{', project='}<span className="str">"acme-corp"</span>{')'}
           {'\n'}
-          {'agent.tools.add('}<span className="str">"https://api.stripe.com/v1"</span>{')'}{'\n'}
-          {'result = agent.tools.call('}<span className="str">"https://api.stripe.com/v1"</span>{', '}<span className="str">"listCharges"</span>{')'}{'\n'}
           {'\n'}
-          <span className="kw">print</span>{'(agent.memory.recall('}<span className="str">"last billing query"</span>{'))'}{'\n'}
+          {'agent.tools.add('}<span className="str">"https://api.stripe.com/v1"</span>{')'}
+          {'\n'}
+          {'result = agent.tools.call('}<span className="str">"https://api.stripe.com/v1"</span>{', '}<span className="str">"listCharges"</span>{')'}
+          {'\n'}
+          {'\n'}
+          <span className="kw">print</span>{'(agent.memory.recall('}<span className="str">"last billing query"</span>{'))'}
+          {'\n'}
         </div>
       </div>
 
       <div className="divider" />
 
       {/* The Stack */}
-      <div className="section">
+      <div className="section" id="stack">
         <p className="section-label">THE STACK</p>
         <h2 className="section-heading">Built standalone. Integrated later.</h2>
         <div className="grid-3">
