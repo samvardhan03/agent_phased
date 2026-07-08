@@ -6,7 +6,7 @@ Every AI framework gives your agent a brain. None of them give you a body. **Age
 
 ---
 
-## 🏛️ Architecture
+## Architecture
 
 AgentPhased follows a HashiCorp-style decoupled architecture: each pillar is a fully independent project that can be installed, tested, and deployed in isolation. The unification layer glues them together through a shared, thread-safe event bus, avoiding tight coupling or heavy inheritance.
 
@@ -51,9 +51,9 @@ graph TB
 
 ---
 
-## ⚡ The Three Pillars
+## The Three Pillars
 
-### 🔑 AgentID — Cryptographic Identity
+### AgentID — Cryptographic Identity
 Every agent gets a deterministic Ed25519 keypair derived from its name and project namespace. No certificates. No OAuth dance. Just a public fingerprint that is reproducible, verifiable, and auditable across environments.
 *   Deterministic key derivation from `(name, project)` tuple
 *   Ed25519 signing and signature verification
@@ -71,7 +71,7 @@ signature = identity.sign(b"payload")
 
 ---
 
-### 🧠 AgentMem — Persistent Memory
+### AgentMem — Persistent Memory
 A compiled Rust core exposed to Python via PyO3. Not a vector database wrapper, but an engine. Episodic memory stores structured action logs on disk, while semantic memory runs HNSW approximate nearest-neighbor search over local ONNX embeddings.
 *   Episodic memory: structured `(action, result_summary, timestamp)` logs
 *   Semantic recall: HNSW approximate nearest-neighbor search
@@ -109,7 +109,7 @@ result = tool.call("listUsers", limit=10)
 
 ---
 
-## 🚀 Unified Quickstart
+## Unified Quickstart
 
 Get your agent running locally in under a minute.
 
@@ -152,7 +152,7 @@ pip install -e .
 
 ---
 
-## 🎯 Design Philosophy
+## Design Philosophy
 
 AgentPhased borrows its architecture from the HashiCorp ecosystem (Vault, Consul, Nomad): build each tool as a fully standalone, production-grade system, then provide a thin orchestration layer for teams that want the integrated experience.
 
@@ -166,7 +166,7 @@ AgentPhased borrows its architecture from the HashiCorp ecosystem (Vault, Consul
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 agent_phased/
@@ -185,7 +185,7 @@ agent_phased/
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 | Status | Milestone |
 | :--- | :--- |
@@ -200,7 +200,7 @@ agent_phased/
 
 ---
 
-## 📄 License
+## License
 
 Open source under the [MIT License](LICENSE).
 
