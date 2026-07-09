@@ -27,7 +27,7 @@ const heroSlides = [
     tabTitle: 'The OS for Autonomous Agents',
     eyebrow: 'Open-Source Agent Infrastructure',
     headline: (<>Every framework gives your agent a brain.{' '}<span style={{ color: '#2D8C8C' }}>None give it a body.</span></>),
-    desc: 'AgentPhased is the body: cryptographic identity, structured memory, and dynamic tool execution — three standalone Rust-compiled engines that compose into one auditable runtime.',
+    desc: 'AgentPhased is the body: cryptographic identity, structured memory, and dynamic tool execution. Three standalone Rust-compiled engines compose into one auditable runtime.',
     cta: { label: 'Get Started', href: '#quickstart' },
     ctaSecondary: { label: 'View on GitHub →', href: 'https://github.com/samvardhan03/agent_phased' },
   },
@@ -36,7 +36,7 @@ const heroSlides = [
     tabTitle: 'Ed25519 Cryptographic Identity',
     eyebrow: 'AgentID',
     headline: (<>Deterministic keypairs.{' '}<span style={{ color: '#D05D43' }}>Zero certificates.</span></>),
-    desc: 'Every agent gets an Ed25519 keypair derived deterministically from its name and project namespace. Reproducible fingerprints, request signing, and cross-system verification — with zero external dependencies.',
+    desc: 'Every agent gets an Ed25519 keypair derived deterministically from its name and project namespace. Reproducible fingerprints, request signing, and cross-system verification, with zero external dependencies.',
     cta: { label: 'View AgentID →', href: 'https://github.com/samvardhan03/AgentID' },
   },
   {
@@ -44,7 +44,7 @@ const heroSlides = [
     tabTitle: 'Episodic + Semantic Recall',
     eyebrow: 'AgentMem',
     headline: (<>Not a vector database wrapper.{' '}<span style={{ color: '#8B6CC1' }}>An engine.</span></>),
-    desc: 'Compiled Rust core exposed via PyO3. Episodic memory stores structured action logs. Semantic memory runs HNSW approximate nearest-neighbor search over ONNX embeddings — no external API calls. RocksDB persistence with namespace isolation.',
+    desc: 'Compiled Rust core exposed via PyO3. Episodic memory stores structured action logs. Semantic memory runs HNSW approximate nearest-neighbor search over ONNX embeddings with no external API calls. RocksDB persistence with namespace isolation.',
     cta: { label: 'View AgentMem →', href: 'https://github.com/Muskangujar/AgentMem' },
   },
   {
@@ -66,7 +66,7 @@ const stackModules = [
     id: 'AgentID',
     tag: 'Cryptographic Identity',
     tagClass: 'module-tag--id',
-    desc: 'Every agent gets a deterministic Ed25519 keypair derived from its name and project namespace. No certificates. No OAuth dance. Just a fingerprint that is reproducible, verifiable, and auditable — with zero external dependencies.',
+    desc: 'Every agent gets a deterministic Ed25519 keypair derived from its name and project namespace. No certificates. No OAuth dance. Just a fingerprint that is reproducible, verifiable, and auditable, with zero external dependencies.',
     href: 'https://github.com/samvardhan03/AgentID',
     features: [
       { title: 'Key Derivation', text: 'Deterministic from (name, project) tuple. Same inputs always produce the same keypair.' },
@@ -78,7 +78,7 @@ const stackModules = [
     id: 'AgentMem',
     tag: 'Persistent Memory',
     tagClass: 'module-tag--mem',
-    desc: 'A compiled Rust core exposed to Python via PyO3. Not a vector database wrapper — an engine. Episodic memory stores structured (action, result_summary, timestamp) tuples. Semantic memory runs HNSW approximate nearest-neighbor search over ONNX embeddings with no external API calls.',
+    desc: 'A compiled Rust core exposed to Python via PyO3. Not a vector database wrapper; it is an engine. Episodic memory stores structured (action, result_summary, timestamp) tuples. Semantic memory runs HNSW approximate nearest-neighbor search over ONNX embeddings with no external API calls.',
     href: 'https://github.com/Muskangujar/AgentMem',
     features: [
       { title: 'Episodic Memory', text: 'Structured action logs with timestamps. Every tool call is persisted as a queryable episode.' },
@@ -278,7 +278,7 @@ function App() {
               <div className="split-col split-col-dark">
                 <h3>The Status Quo</h3>
                 <ul>
-                  <li>API keys hardcoded as plaintext environment variables — no agent-level identity, no per-request signing</li>
+                  <li>API keys hardcoded as plaintext environment variables. No agent-level identity, no per-request signing</li>
                   <li>Memory is unstructured vector dumps with no retrieval guarantees and no namespace isolation</li>
                   <li>Tool integrations are brittle schema wrappers that break when APIs change</li>
                   <li>No audit trail, no event telemetry, no way to trace what an agent did or why</li>
@@ -287,10 +287,10 @@ function App() {
               <div className="split-col split-col-accent">
                 <h3>The AgentPhased Stack</h3>
                 <ul>
-                  <li>Ed25519 keypair identity with deterministic fingerprints derived from (name, project) — every request is signed</li>
+                  <li>Ed25519 keypair identity with deterministic fingerprints derived from (name, project). Every request is signed</li>
                   <li>Episodic + semantic memory backed by RocksDB with HNSW indexing and ONNX embeddings — fully local, no API calls</li>
                   <li>Compiled Rust parser that infers schemas from OpenAPI specs and raw HTML automatically</li>
-                  <li>Thread-safe EventBus with append-only history — every tool.called event is logged, signed, and streamable via SSE</li>
+                  <li>Thread-safe EventBus with append-only history. Every tool.called event is logged, signed, and streamable via SSE</li>
                 </ul>
               </div>
             </div>
@@ -308,7 +308,7 @@ function App() {
           <p className="section-subtext">
             Follows a HashiCorp-style decoupled architecture. Each pillar has its own
             repository, test suite, and release cycle. The runtime composes them through
-            a pub/sub EventBus — not tight coupling or inheritance.
+            a pub/sub EventBus, avoiding tight coupling or inheritance.
           </p>
         </div>
         <div ref={r6} className="reveal-scale reveal-delay-2">
@@ -375,7 +375,7 @@ function App() {
             <div className="code-features">
               <div ref={r9} className="reveal-left code-feature">
                 <h4>Automatic Tool Wiring</h4>
-                <p>Pass a URL. The Rust parser infers the OpenAPI schema, caches it in AgentMem, and signs every request with AgentID — automatically.</p>
+                <p>Pass a URL. The Rust parser infers the OpenAPI schema, caches it in AgentMem, and signs every request with AgentID automatically.</p>
               </div>
               <div ref={r10} className="reveal-left code-feature" style={{ transitionDelay: '0.12s' }}>
                 <h4>Episodic Memory Logging</h4>
@@ -383,7 +383,7 @@ function App() {
               </div>
               <div ref={r11} className="reveal-left code-feature" style={{ transitionDelay: '0.24s' }}>
                 <h4>Semantic Recall</h4>
-                <p>Query memory in natural language. HNSW approximate nearest-neighbor search over ONNX embeddings — fully local, no external embedding API calls.</p>
+                <p>Query memory in natural language. HNSW approximate nearest-neighbor search over ONNX embeddings. Fully local, no external embedding API calls.</p>
               </div>
               <div ref={r12} className="reveal-left code-feature" style={{ transitionDelay: '0.36s' }}>
                 <h4>Event Telemetry</h4>
@@ -445,7 +445,7 @@ function App() {
             <h2 className="section-heading">Built standalone. Integrated later.</h2>
             <p className="section-subtext" style={{ marginBottom: 0 }}>
               Each engine has its own repository, test suite, and release cycle.
-              Use one module or all three — they compose through the AgentPhased runtime.
+              Use one module or all three; they compose through the AgentPhased runtime.
             </p>
           </div>
           <div className="stack-controls-wrap">
@@ -533,7 +533,7 @@ function App() {
                 <div className="qs-step"><div className="qs-step-num">1</div><div className="qs-step-text">Install: <code>pip install agentphased</code></div></div>
                 <div className="qs-step"><div className="qs-step-num">2</div><div className="qs-step-text">Or clone locally: <code>pip install -e .</code></div></div>
                 <div className="qs-step"><div className="qs-step-num">3</div><div className="qs-step-text">Launch runtime + dashboard: <code>./start.sh</code></div></div>
-                <div className="qs-step"><div className="qs-step-num">4</div><div className="qs-step-text">Dashboard at <code>http://localhost:5175</code> — live SSE event stream</div></div>
+                <div className="qs-step"><div className="qs-step-num">4</div><div className="qs-step-text">Dashboard at <code>http://localhost:5175</code>, featuring a live SSE event stream</div></div>
               </div>
             </div>
             <div className="qs-right">
@@ -577,8 +577,8 @@ function App() {
             <thead><tr><th>Principle</th><th>Implementation</th></tr></thead>
             <tbody>
               <tr><td>Standalone First</td><td>Each pillar has its own repository, test suite, and release cycle. AgentID, AgentMem, and Agentool ship independently.</td></tr>
-              <tr><td>Compiled Cores</td><td>Memory and tool parsing are Rust compiled to native Python extensions via PyO3 — not Python wrappers around SQLite.</td></tr>
-              <tr><td>Event-Driven Glue</td><td>The unification layer is a thread-safe pub/sub EventBus with append-only history — not inheritance or tight coupling.</td></tr>
+              <tr><td>Compiled Cores</td><td>Memory and tool parsing are Rust compiled to native Python extensions via PyO3, not Python wrappers around SQLite.</td></tr>
+              <tr><td>Event-Driven Glue</td><td>The unification layer is a thread-safe pub/sub EventBus with append-only history, not inheritance or tight coupling.</td></tr>
               <tr><td>No Vendor Lock-in</td><td>Zero cloud dependencies. ONNX embeddings run locally. RocksDB stores data on disk. Entire stack runs on localhost.</td></tr>
               <tr><td>Auditable by Default</td><td>Every tool invocation is signed with Ed25519, logged as an episodic memory entry, and streamable via SSE in real-time.</td></tr>
             </tbody>
