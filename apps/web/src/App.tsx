@@ -481,8 +481,8 @@ function App() {
                   className={`arch-node arch-node--id ${activeNode === 'id' ? 'arch-node--active' : ''}`}
                   onMouseEnter={() => setActiveNode('id')}
                   onClick={() => window.open(archNodesData.id.repo, '_blank')}
-                  title="Click to view AgentID Repository"
                 >
+                  <title>Click to view AgentID Repository</title>
                   <rect x="50" y="30" width="200" height="70" rx="8" fill="#FFFCF5" stroke="#DED4C8" strokeWidth="1" />
                   <rect x="50" y="30" width="200" height="3" rx="1.5" fill="#2D8C8C" />
                   <text x="150" y="58" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="14" fill="#191714" fontWeight="700">AgentID</text>
@@ -493,8 +493,8 @@ function App() {
                   className={`arch-node arch-node--mem ${activeNode === 'mem' ? 'arch-node--active' : ''}`}
                   onMouseEnter={() => setActiveNode('mem')}
                   onClick={() => window.open(archNodesData.mem.repo, '_blank')}
-                  title="Click to view AgentMem Repository"
                 >
+                  <title>Click to view AgentMem Repository</title>
                   <rect x="300" y="30" width="200" height="70" rx="8" fill="#FFFCF5" stroke="#DED4C8" strokeWidth="1" />
                   <rect x="300" y="30" width="200" height="3" rx="1.5" fill="#8B6CC1" />
                   <text x="400" y="58" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="14" fill="#191714" fontWeight="700">AgentMem</text>
@@ -505,8 +505,8 @@ function App() {
                   className={`arch-node arch-node--tool ${activeNode === 'tool' ? 'arch-node--active' : ''}`}
                   onMouseEnter={() => setActiveNode('tool')}
                   onClick={() => window.open(archNodesData.tool.repo, '_blank')}
-                  title="Click to view Agentool Repository"
                 >
+                  <title>Click to view Agentool Repository</title>
                   <rect x="550" y="30" width="200" height="70" rx="8" fill="#FFFCF5" stroke="#DED4C8" strokeWidth="1" />
                   <rect x="550" y="30" width="200" height="3" rx="1.5" fill="#D6AD60" />
                   <text x="650" y="58" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="14" fill="#191714" fontWeight="700">Agentool</text>
@@ -524,8 +524,8 @@ function App() {
                   className={`arch-node arch-node--class ${activeNode === 'class' ? 'arch-node--active' : ''}`}
                   onMouseEnter={() => setActiveNode('class')}
                   onClick={() => window.open(archNodesData.class.repo, '_blank')}
-                  title="Click to view Runtime Repository"
                 >
+                  <title>Click to view Runtime Repository</title>
                   <rect x="180" y="175" width="250" height="55" rx="8" fill="#FFFCF5" stroke="#191714" strokeWidth="1.5" />
                   <text x="305" y="202" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="13" fill="#191714" fontWeight="700">Agent Class</text>
                 </g>
@@ -534,8 +534,8 @@ function App() {
                   className={`arch-node arch-node--registry ${activeNode === 'registry' ? 'arch-node--active' : ''}`}
                   onMouseEnter={() => setActiveNode('registry')}
                   onClick={() => window.open(archNodesData.registry.repo, '_blank')}
-                  title="Click to view Runtime Repository"
                 >
+                  <title>Click to view Runtime Repository</title>
                   <rect x="460" y="175" width="160" height="55" rx="8" fill="#FFFCF5" stroke="#DED4C8" strokeWidth="1" />
                   <text x="540" y="202" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="12" fill="#746B61" fontWeight="500">ToolRegistry</text>
                 </g>
@@ -546,8 +546,8 @@ function App() {
                   className={`arch-node arch-node--bus ${activeNode === 'bus' ? 'arch-node--active' : ''}`}
                   onMouseEnter={() => setActiveNode('bus')}
                   onClick={() => window.open(archNodesData.bus.repo, '_blank')}
-                  title="Click to view Runtime Repository"
                 >
+                  <title>Click to view Runtime Repository</title>
                   <rect x="270" y="300" width="260" height="46" rx="8" fill="#EFE7DA" stroke="#DED4C8" strokeWidth="1" />
                   <text x="400" y="323" textAnchor="middle" dominantBaseline="middle" fontFamily="Inter, sans-serif" fontSize="12" fill="#746B61" fontWeight="500">EventBus (pub/sub, append-only)</text>
                 </g>
