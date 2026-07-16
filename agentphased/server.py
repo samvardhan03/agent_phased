@@ -1,9 +1,17 @@
 import asyncio
 import json
+import os
+import sys
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
-from fastapi import FastAPI
+# Ensure the parent directory (project root) is on sys.path so that
+# `import agentphased` works regardless of the working directory.
+_PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+if _PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, _PROJECT_ROOT)
+
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sse_starlette.sse import EventSourceResponse
 
@@ -73,7 +81,6 @@ def list_tools():
     return agent.tools.list()
 
 
-from fastapi import HTTPException
 
 @app.post("/api/tools/add")
 def add_tool(url: str):
