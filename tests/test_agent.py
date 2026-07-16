@@ -14,6 +14,12 @@ from agentphased import Agent, EventBus, TierError
 from agentphased.bus import EventBus as EventBusClass
 from agentphased.billing import require_tier, mock_stripe_checkout, get_tier_limits
 
+try:
+    from agentmem import _native
+    HAS_NATIVE = True
+except ImportError:
+    HAS_NATIVE = False
+
 
 # ---------------------------------------------------------------------------
 # Fixtures
@@ -135,6 +141,7 @@ class TestToolCallEventRouting:
         assert events[0]["url"] == DUMMY_SPEC
         assert events[0]["method"] == "ping"
 
+    @pytest.mark.skipif(not HAS_NATIVE, reason="Native memory extension not available (ONNX missing)")
     def test_call_logs_to_episodic_memory(self, agent):
         """The default bus subscriber should log the event into memory."""
         tool = agent.tools.add(DUMMY_SPEC)

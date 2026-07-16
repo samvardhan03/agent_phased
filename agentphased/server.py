@@ -121,4 +121,12 @@ if __name__ == "__main__":
     import uvicorn
     # Publish a startup event
     agent.bus.publish("system", {"action": "startup", "message": "Backend initialized."})
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    
+    host = os.getenv("AGENTPHASED_HOST", "127.0.0.1")
+    port_str = os.getenv("AGENTPHASED_PORT", "8000")
+    try:
+        port = int(port_str)
+    except ValueError:
+        port = 8000
+        
+    uvicorn.run(app, host=host, port=port)
